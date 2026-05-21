@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="pulseGlow" x1="128" y1="529" x2="896" y2="529" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#25bfff"/>
+      <stop offset="0.34" stop-color="#25dce8"/>
+      <stop offset="0.56" stop-color="#5cf5a0"/>
+      <stop offset="0.78" stop-color="#8fff28"/>
+      <stop offset="1" stop-color="#9dff00"/>
+    </linearGradient>
+  </defs>
+  <path d="M153 529 H327 L421 326 L548 698 L637 410 L724 529 H871" fill="none" stroke="url(#pulseGlow)" stroke-width="116" stroke-linecap="round" stroke-linejoin="round" opacity="0.05"/>
+  <path d="M153 529 H327 L421 326 L548 698 L637 410 L724 529 H871" fill="none" stroke="url(#pulseGlow)" stroke-width="86" stroke-linecap="round" stroke-linejoin="round" opacity="0.09"/>
+  <path d="M153 529 H327 L421 326 L548 698 L637 410 L724 529 H871" fill="none" stroke="url(#pulseGlow)" stroke-width="66" stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/>
+</svg>

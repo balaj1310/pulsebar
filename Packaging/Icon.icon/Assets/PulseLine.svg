@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="pulseLine" x1="128" y1="529" x2="896" y2="529" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#28bdff"/>
+      <stop offset="0.31" stop-color="#28d9eb"/>
+      <stop offset="0.54" stop-color="#62efa4"/>
+      <stop offset="0.77" stop-color="#92ff2d"/>
+      <stop offset="1" stop-color="#a1ff00"/>
+    </linearGradient>
+  </defs>
+  <path d="M153 529 H327 L421 326 L548 698 L637 410 L724 529 H871" fill="none" stroke="url(#pulseLine)" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
