@@ -3,7 +3,7 @@
   <img src="docs/assets/menu-preview.png" alt="PulseBar menu preview" width="640">
 </p>
 
-[![CI](https://github.com/amer8/pulsebar/workflows/quality.yml/badge.svg)](https://github.com/amer8/pulsebar/actions/workflows/quality.yml)
+[![CI](https://github.com/amer8/pulsebar/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/amer8/pulsebar/actions/workflows/quality.yml)
 
 `PulseBar` is an unofficial macOS menu bar monitor for telemetry exposed by the DGX Dashboard web app on NVIDIA DGX Spark and compatible NVIDIA GB10-based OEM systems. It signs in to the local dashboard, listens to the server-sent event stream, and shows a compact `RAM` and `GPU` status item in the menu bar.
 
