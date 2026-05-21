@@ -686,7 +686,7 @@ private enum ReadmeAssetRenderer {
     static func writeMenuPreview(to url: URL) throws {
         let appIcon = NSImage(contentsOf: url.deletingLastPathComponent().appendingPathComponent("app-icon.png"))
         let renderer = ImageRenderer(content: ReadmeMenuPreview(appIcon: appIcon))
-        renderer.scale = 2
+        renderer.scale = 1
 
         guard let image = renderer.nsImage else {
             throw ToolError("failed to render README menu preview")
@@ -697,6 +697,10 @@ private enum ReadmeAssetRenderer {
 }
 
 private struct ReadmeMenuPreview: View {
+    private let cardWidth: CGFloat = 640
+    private let cardHeight: CGFloat = 320
+    private let safeInset: CGFloat = 40
+
     let appIcon: NSImage?
 
     var body: some View {
@@ -706,39 +710,40 @@ private struct ReadmeMenuPreview: View {
             VStack(spacing: 0) {
                 menuBar
 
-                HStack(alignment: .top, spacing: 30) {
+                HStack(alignment: .top, spacing: 26) {
                     titleBlock
-                        .padding(.top, 96)
+                        .padding(.top, 34)
 
                     menuCard
-                        .padding(.top, 14)
+                        .padding(.top, 3)
                 }
-                .padding(.horizontal, 64)
+                .padding(.horizontal, safeInset)
             }
+            .padding(.top, 32)
         }
-        .frame(width: 920, height: 520)
+        .frame(width: cardWidth, height: cardHeight)
     }
 
     private var titleBlock: some View {
-        HStack(alignment: .center, spacing: 18) {
+        HStack(alignment: .center, spacing: 14) {
             if let appIcon {
                 Image(nsImage: appIcon)
                     .resizable()
                     .interpolation(.high)
-                    .frame(width: 86, height: 86)
-                    .shadow(color: .black.opacity(0.18), radius: 18, x: 0, y: 10)
+                    .frame(width: 58, height: 58)
+                    .shadow(color: .black.opacity(0.18), radius: 14, x: 0, y: 8)
             }
 
-            VStack(alignment: .leading, spacing: 14) {
+            VStack(alignment: .leading, spacing: 9) {
                 Text("PulseBar")
-                    .font(.system(size: 32, weight: .semibold))
+                    .font(.system(size: 23, weight: .semibold))
                 Text("Live DGX Dashboard telemetry in the macOS menu bar.")
-                    .font(.system(size: 17))
+                    .font(.system(size: 13))
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
             }
         }
-        .frame(width: 430, alignment: .leading)
+        .frame(width: 266, alignment: .leading)
     }
 
     private var backgroundView: some View {
@@ -767,7 +772,7 @@ private struct ReadmeMenuPreview: View {
                 )
                 .frame(width: 210, height: 560)
                 .rotationEffect(.degrees(-20))
-                .offset(x: -140, y: 176)
+                .offset(x: -110, y: 140)
                 .blur(radius: 34)
 
             Capsule()
@@ -783,7 +788,7 @@ private struct ReadmeMenuPreview: View {
                 )
                 .frame(width: 300, height: 230)
                 .rotationEffect(.degrees(11))
-                .offset(x: 258, y: -12)
+                .offset(x: 190, y: -24)
                 .blur(radius: 26)
 
             LinearGradient(
@@ -796,7 +801,7 @@ private struct ReadmeMenuPreview: View {
                 endPoint: .bottom
             )
         }
-        .frame(width: 920, height: 520)
+        .frame(width: cardWidth, height: cardHeight)
         .clipped()
     }
 
@@ -824,8 +829,8 @@ private struct ReadmeMenuPreview: View {
                 .monospacedDigit()
         }
         .foregroundStyle(.primary)
-        .padding(.horizontal, 22)
-        .frame(height: 36)
+        .padding(.horizontal, safeInset)
+        .frame(height: 32)
         .background(.ultraThinMaterial)
     }
 
@@ -847,18 +852,18 @@ private struct ReadmeMenuPreview: View {
 
             previewRow(symbol: "power", title: "Quit", shortcut: "⌘Q")
         }
-        .frame(width: 320)
-        .padding(.vertical, 8)
-        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .frame(width: 250)
+        .padding(.vertical, 7)
+        .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
         .overlay {
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
                 .stroke(.white.opacity(0.65), lineWidth: 1)
         }
-        .shadow(color: .black.opacity(0.22), radius: 24, x: 0, y: 18)
+        .shadow(color: .black.opacity(0.22), radius: 18, x: 0, y: 12)
     }
 
     private func previewRow(symbol: String, title: String, shortcut: String? = nil) -> some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 8) {
             Label {
                 Text(title)
                     .lineLimit(1)
@@ -874,17 +879,17 @@ private struct ReadmeMenuPreview: View {
                     .foregroundStyle(.secondary)
             }
         }
-        .font(.system(size: 15))
+        .font(.system(size: 12))
         .monospacedDigit()
-        .padding(.horizontal, 16)
-        .frame(height: 34)
+        .padding(.horizontal, 12)
+        .frame(height: 27)
     }
 
     private var divider: some View {
         Rectangle()
             .fill(.primary.opacity(0.13))
             .frame(height: 1)
-            .padding(.vertical, 6)
+            .padding(.vertical, 4)
     }
 }
 
